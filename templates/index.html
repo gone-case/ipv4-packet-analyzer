@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPv4 Packet Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+<h1>IPv4 Packet Analyzer</h1>
+
+<div>
+    <input type="file" id="pcapFile">
+    <button onclick="uploadPCAP()">Upload pcap</button>
+</div>
+
+<div class="layout">
+
+    <!-- LEFT COLUMN: PACKET LIST -->
+    <div class="packet-list">
+        <h2>Packets</h2>
+        <ul id="packets"></ul>
+    </div>
+
+    <!-- RIGHT COLUMN: HEADER DIAGRAM + DETAILS -->
+    <div class="header-details">
+
+        <h2>IPv4 Header Structure</h2>
+
+        <div class="ipv4-header">
+
+            <div class="cell c1" id="versionBox">Version</div>
+            <div class="cell c1" id="ihlBox">IHL</div>
+            <div class="cell c2" id="tosBox">Type of Service</div>
+            <div class="cell c4" id="totalLenBox">Total Length</div>
+
+            <div class="cell c4" id="identBox">Identification</div>
+            <div class="cell c1" id="flagsBox">Flags</div>
+            <div class="cell c3" id="fragOffsetBox">Fragment Offset</div>
+
+            <div class="cell c2" id="ttlBox">Time To Live</div>
+            <div class="cell c2" id="protocolBox">Protocol</div>
+            <div class="cell c4" id="checksumBox">Header Checksum</div>
+
+            <div class="cell c8" id="srcIPBox">Source Address</div>
+            <div class="cell c8" id="dstIPBox">Destination Address</div>
+            <div class="cell c8" id="optionsBox">Options</div>
+
+        </div>
+
+        <h3>Extra Details</h3>
+        <div id="extraDetails" class="extra-details"></div>
+
+        <h3>Raw Hex</h3>
+        <pre id="rawHex"></pre>
+
+    </div>
+
+</div>
+
+<script src="/static/main.js"></script>
+</body>
+</html>
